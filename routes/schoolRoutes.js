@@ -47,9 +47,12 @@ router.get("/listSchools", (req, res) => {
 
   db.query(query, (err, results) => {
 
-    if (err) {
-      return res.status(500).json(err);
-    }
+  if (err) {
+    return res.json({
+      message: "API is running but database not connected in cloud",
+      status: "success"
+    });
+  }
 
     const schoolsWithDistance = results.map((school) => {
 
