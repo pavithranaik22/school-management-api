@@ -16,3 +16,10 @@ const PORT = 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+app.get("/listSchools", (req, res) => {
+  res.json({
+    message: "API working on Render",
+    status: "success"
+  });
+});
